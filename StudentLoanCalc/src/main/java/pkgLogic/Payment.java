@@ -22,7 +22,10 @@ public class Payment {
 		
 		this.PaymentNbr = paymentNbr;
 		this.DueDate = dueDate;
-		this.Payment = loan.GetPMT();
+		this.Payment = (beginningBalance>loan.GetPMT())?loan.GetPMT()
+				:(beginningBalance+(beginningBalance*(loan.getInterestRate()/12)));
+		
+		
 		this.AdditionalPayment = loan.getAdditionalPayment();
 		
 		InterestPayment=beginningBalance * (loan.getInterestRate()/12);
@@ -64,7 +67,9 @@ public class Payment {
 		return EndingBanlance;
 	}
 
-    
+    public double getTotalPayment() {
+    	return this.getPayment()+this.getAdditionalPayment();
+    }
     
 	
 	

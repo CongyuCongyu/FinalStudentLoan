@@ -44,16 +44,6 @@ public class Loan {
 			
 			loanPayments.add(payment);
 		}
-		
-//to deal with the last payment
-		if (RemainningBalance>0) {
-			Payment payment=new Payment(RemainningBalance,
-					PaymentCnt++,
-					startDate.plusMonths(1),
-					this);
-			loanPayments.add(payment);
-		}
-		
 	}
 	
 	
@@ -114,8 +104,16 @@ public class Loan {
 
     }
 	
+	public double GetTotalPayments() {
+		 return loanPayments.stream().mapToDouble(p -> p.getTotalPayment()).sum();
+	}
 	
 	
+	public double GetTotalInterest() {
+		double total = 0;
+		for (Payment p : loanPayments) {total+=p.getInterestPayment();}
+		return total;
+	}
 	
 	
 
