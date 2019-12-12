@@ -36,21 +36,46 @@ public class LoanCalcViewController implements Initializable   {
 	
 	@FXML
 	private Label lblTotalPayemnts;
-
 	
 	@FXML
 	private TableView<Payment> tvResults;
 	
+	
+	
 	@FXML
-	private TableColumn<Payment, Integer> colPaymentNumber;
+	private TableColumn<Payment, Integer> colPaymentNbr;
+
+	@FXML
+	private TableColumn<Payment, LocalDate> colDueDate;
+	
+	@FXML
+	private TableColumn<Payment, Double> colPayment;
+	
+	@FXML
+	private TableColumn<Payment, Double> colAdditionalPayment;
+	
+	@FXML
+	private TableColumn<Payment, Double> colInterestPayment;
+	
+	@FXML
+	private TableColumn<Payment, Double> colPrinciple;
+	
+	@FXML
+	private TableColumn<Payment, Double> colEndingBalance;
 	
 	
 	private ObservableList<Payment> paymentList = FXCollections.observableArrayList();
 	
-	//TODO: Account for all the other columns		
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		colPaymentNumber.setCellValueFactory(new PropertyValueFactory<>("paymentNbr"));
+		colPaymentNbr.setCellValueFactory(new PropertyValueFactory<>("PaymentNbr"));
+		colDueDate.setCellValueFactory(new PropertyValueFactory<>("DueDate"));
+		colPayment.setCellValueFactory(new PropertyValueFactory<>("Payment"));
+		colAdditionalPayment.setCellValueFactory(new PropertyValueFactory<>("AdditionalPayment"));
+		colInterestPayment.setCellValueFactory(new PropertyValueFactory<>("InterestPayment"));
+		colPrinciple.setCellValueFactory(new PropertyValueFactory<>("Principle"));
+		colEndingBalance.setCellValueFactory(new PropertyValueFactory<>("EndingBalance"));
+
 		//TODO: Add a 'setCellValueFactor' entry for each column, mapping to each attribute in Payment
 		
 		tvResults.setItems(paymentList);
