@@ -3,8 +3,6 @@ package pkgLogic;
 import java.time.LocalDate;
 
 public class Payment {
-	
-	//TODO: I've accounted for PaymentNbr, you need to add all the other fields for the class
 	private int PaymentNbr;
     private LocalDate DueDate;
     private double Payment;
@@ -53,6 +51,10 @@ public class Payment {
 
 	public double getAdditionalPayment() {
 		return AdditionalPayment;
+	}
+	
+	public void setAdditionalPayment() {
+		this.AdditionalPayment=0;
 	}
 
 	public double getInterestPayment() {

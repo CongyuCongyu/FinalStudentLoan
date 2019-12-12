@@ -44,6 +44,17 @@ public class Loan {
 			
 			loanPayments.add(payment);
 		}
+		
+		
+		Payment payment=new Payment(RemainningBalance,
+				PaymentCnt++,
+				startDate.plusMonths(1),
+				this);
+		
+		RemainningBalance = payment.getEndingBanlance();
+		payment.setAdditionalPayment();
+		
+		loanPayments.add(payment);
 	}
 	
 	
@@ -104,10 +115,11 @@ public class Loan {
 
     }
 	
+    
+//getter for the total payments and total interest    
 	public double GetTotalPayments() {
 		 return loanPayments.stream().mapToDouble(p -> p.getTotalPayment()).sum();
 	}
-	
 	
 	public double GetTotalInterest() {
 		double total = 0;
