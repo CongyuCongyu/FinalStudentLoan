@@ -7,6 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import pkgLogic.Loan;
 import pkgLogic.Payment;
 
 import java.net.URL;
@@ -35,7 +36,13 @@ public class LoanCalcViewController implements Initializable   {
 	private DatePicker PaymentStartDate;
 	
 	@FXML
-	private Label lblTotalPayemnts;
+	private TextField AdditionalPayment;
+	
+	@FXML
+	private Label lblTotalPayments;
+	
+	@FXML
+	private Label lblTotalInterest;
 	
 	@FXML
 	private TableView<Payment> tvResults;
@@ -93,12 +100,27 @@ public class LoanCalcViewController implements Initializable   {
 	 */
 	@FXML
 	private void btnCalcLoan(ActionEvent event) {
-
 		//	Examples- how to read data from the form
-		double dLoanAmount = Double.parseDouble(LoanAmount.getText());		
-		lblTotalPayemnts.setText("123");		
-		LocalDate localDate = PaymentStartDate.getValue();
 		
+		paymentList.clear();
+		lblTotalPayments.setText("");
+		lblTotalInterest.setText("");
+
+		double dLoanAmount = Double.parseDouble(LoanAmount.getText());	
+		double dInterestRate = Double.parseDouble(InterestRate.getText());
+		int iNbrOfYears = Integer.parseInt(NbrOfYears.getText());
+		LocalDate localDate = PaymentStartDate.getValue();
+		double dAdditionalPayment=Double.parseDouble(AdditionalPayment.getText());
+		
+		Loan StudentLoan=new Loan(localDate,dLoanAmount,dInterestRate,dAdditionalPayment,iNbrOfYears*12);
+		for(Payment p: StudentLoan.getLoanPayments()) {
+			paymentList.add(p);
+		}
+		//paymentList.addAll(StudentLoan.getLoanPayments());
+		
+        lblTotalPayments.setText(Double.toString(StudentLoan.GetTotalPayments()));
+        lblTotalInterest.setText(Double.toString(StudentLoan.GetTotalInterest()));
+        
 		/*
 		 * When this button is clicked, you need to do the following:
 		 * 

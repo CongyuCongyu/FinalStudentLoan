@@ -18,6 +18,7 @@ public class Loan {
 	private ArrayList<Payment> loanPayments=new ArrayList<Payment>();
 	
 	
+	
 //Two constructors
 	public Loan(LocalDate startDate, double loanAmount, double interestRate, double additionalPayment,
 			int loanPaymentCnt) {
@@ -114,9 +115,14 @@ public class Loan {
     			this.bCompoundingOption));		
 
     }
-	
     
-//getter for the total payments and total interest    
+    
+    public ArrayList<Payment> getLoanPayments() {
+		return loanPayments;
+	}
+
+
+	//getter for the total payments and total interest    
 	public double GetTotalPayments() {
 		 return loanPayments.stream().mapToDouble(p -> p.getTotalPayment()).sum();
 	}

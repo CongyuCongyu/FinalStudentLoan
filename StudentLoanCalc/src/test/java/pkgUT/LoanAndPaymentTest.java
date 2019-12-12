@@ -22,6 +22,7 @@ class LoanAndPaymentTest {
 		assertEquals(l.GetTotalPayments(), expectedTotalPayments,0.1);
 	}
 	
+	
 //no extra payment
 	@Test 
 	void Test2() {

@@ -11,6 +11,7 @@ public class Payment {
     private double Principle;
     private double EndingBanlance;
  
+    
 //One constructor     
 	public Payment(double beginningBalance, 
 			int paymentNbr, 
