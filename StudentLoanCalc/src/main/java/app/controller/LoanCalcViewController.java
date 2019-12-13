@@ -115,8 +115,8 @@ public class LoanCalcViewController implements Initializable   {
 		}
 		//paymentList.addAll(StudentLoan.getLoanPayments());
 		
-        lblTotalPayments.setText(Double.toString(StudentLoan.GetTotalPayments()));
-        lblTotalInterest.setText(Double.toString(StudentLoan.GetTotalInterest()));
+        lblTotalPayments.setText(Double.toString(Math.round(StudentLoan.GetTotalPayments()*100.0)/100.0));
+        lblTotalInterest.setText(Double.toString(Math.round(StudentLoan.GetTotalInterest()*100.0)/100.0));
         
 		/*
 		 * When this button is clicked, you need to do the following:

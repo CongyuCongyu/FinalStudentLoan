@@ -37,24 +37,25 @@ public class Loan {
 		{
 			Payment payment=new Payment(RemainningBalance,
 					PaymentCnt++,
-					startDate.plusMonths(1),
+					startDate,
 					this);
-			
+			startDate=startDate.plusMonths(1);
 			RemainningBalance = payment.getEndingBanlance();
 			
 			loanPayments.add(payment);
 		}
 		
+		if (RemainningBalance>0.1) {
+		    Payment payment=new Payment(RemainningBalance,
+			    	PaymentCnt++,
+				    startDate,
+				    this);
+
+		    payment.setlastRemainningBalance();
+		    payment.setAdditionalPayment();
 		
-		Payment payment=new Payment(RemainningBalance,
-				PaymentCnt++,
-				startDate.plusMonths(1),
-				this);
-		
-		RemainningBalance = payment.getEndingBanlance();
-		payment.setAdditionalPayment();
-		
-		loanPayments.add(payment);
+		    loanPayments.add(payment);
+		}
 	}
 	
 	

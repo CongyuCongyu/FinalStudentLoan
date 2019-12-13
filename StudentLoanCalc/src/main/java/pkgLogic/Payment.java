@@ -11,7 +11,6 @@ public class Payment {
     private double Principle;
     private double EndingBanlance;
 
-   
     
 //One constructor     
 	public Payment(double beginningBalance, 
@@ -50,7 +49,18 @@ public class Payment {
 	public double getPayment() {
 		return Payment;
 	}
-
+    
+	public void setlastPayment() {
+		this.Payment=this.getEndingBanlance();
+	}
+	
+	public void setlastPrinciple() {
+		this.AdditionalPayment=this.getPayment()-getInterestPayment();
+	}
+	
+	public void setlastRemainningBalance() {
+		this.EndingBanlance=0;
+	}
 	public double getAdditionalPayment() {
 		return AdditionalPayment;
 	}
