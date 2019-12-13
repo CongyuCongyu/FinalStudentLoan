@@ -31,7 +31,7 @@
 	<center>
 		<VBox alignment="CENTER" prefHeight="532.0" prefWidth="883.0" BorderPane.alignment="CENTER">
 			<children>
-				<HBox alignment="CENTER" prefHeight="152.0" prefWidth="883.0">
+				<HBox alignment="CENTER" focusTraversable="true" prefHeight="152.0" prefWidth="883.0">
 					<children>
 						<GridPane prefHeight="152.0" prefWidth="280.0">
 							<columnConstraints>
@@ -50,12 +50,12 @@
 								<Label text="Interest Rate" GridPane.rowIndex="1" />
 								<Label text="Term of Loan/years" GridPane.rowIndex="2" />
 								<Label text="First Payment Date" GridPane.rowIndex="3" />
-								<TextField fx:id="LoanAmount" prefHeight="25.0" prefWidth="100.0" GridPane.columnIndex="1" />
+								<TextField fx:id="LoanAmount" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: pink;" GridPane.columnIndex="1" />
 								<Label text="Additional Payment" GridPane.rowIndex="4" />
 								<TextField fx:id="InterestRate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-								<TextField fx:id="NbrOfYears" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+								<TextField fx:id="NbrOfYears" style="-fx-background-color: pink;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 								<DatePicker fx:id="PaymentStartDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="AdditionalPayment" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="AdditionalPayment" style="-fx-background-color: pink;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 							</children>
 						</GridPane>
 						<HBox prefHeight="152.0" prefWidth="88.0" />
@@ -70,19 +70,20 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 							</rowConstraints>
 							<children>
-								<Label text="Total Payments" />
-								<Label text="Total Interest" GridPane.rowIndex="1" />
-								<Label fx:id="lblTotalPayments" prefHeight="18.0" prefWidth="174.0" GridPane.columnIndex="1" />
-                        <Label fx:id="lblTotalInterest" prefHeight="18.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+								<Label prefHeight="29.0" prefWidth="117.0" style="-fx-background-color: red;" text="Total Payments" textAlignment="JUSTIFY" />
+								<Label prefHeight="30.0" prefWidth="117.0" style="-fx-background-color: red;" text="Total Interest" textFill="#0d0d0d" GridPane.rowIndex="1" />
+								<Label fx:id="lblTotalPayments" prefHeight="33.0" prefWidth="174.0" style="-fx-background-color: pink;" GridPane.columnIndex="1" />
+                        <Label fx:id="lblTotalInterest" prefHeight="29.0" prefWidth="174.0" style="-fx-background-color: pink;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 							</children>
 						</GridPane>
 					</children>
 				</HBox>
 				<HBox alignment="CENTER" prefHeight="375.0" prefWidth="883.0">
 					<children>
-						<TableView fx:id="tvResults" prefHeight="309.0" prefWidth="815.0">
+						<TableView fx:id="tvResults" prefHeight="309.0" prefWidth="815.0" style="-fx-background-color: pink;">
 							<columns>
 								<TableColumn fx:id="colPaymentNumber" prefWidth="75.0" text="Payment #" />
 								<TableColumn fx:id="colDueDate" prefWidth="114.0" text="Due Date" />
