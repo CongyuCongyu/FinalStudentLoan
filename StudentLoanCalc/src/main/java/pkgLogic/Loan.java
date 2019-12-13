@@ -50,7 +50,8 @@ public class Loan {
 			    	PaymentCnt++,
 				    startDate,
 				    this);
-
+		    
+            payment.setlastPrinciple();
 		    payment.setlastRemainningBalance();
 		    payment.setAdditionalPayment();
 		

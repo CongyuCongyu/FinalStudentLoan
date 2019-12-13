@@ -50,12 +50,9 @@ public class Payment {
 		return Payment;
 	}
     
-	public void setlastPayment() {
-		this.Payment=this.getEndingBanlance();
-	}
 	
 	public void setlastPrinciple() {
-		this.AdditionalPayment=this.getPayment()-getInterestPayment();
+		this.Principle=this.Payment-2*this.InterestPayment;
 	}
 	
 	public void setlastRemainningBalance() {
