@@ -18,7 +18,6 @@ public class Loan {
 	private ArrayList<Payment> loanPayments=new ArrayList<Payment>();
 	
 	
-	
 //Two constructors
 	public Loan(LocalDate startDate, double loanAmount, double interestRate, double additionalPayment,
 			int loanPaymentCnt) {

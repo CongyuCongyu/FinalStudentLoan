@@ -84,13 +84,13 @@
 					<children>
 						<TableView fx:id="tvResults" prefHeight="309.0" prefWidth="815.0">
 							<columns>
-								<TableColumn fx:id="colPaymentNbr" prefWidth="75.0" text="Payment #" />
+								<TableColumn fx:id="colPaymentNumber" prefWidth="75.0" text="Payment #" />
 								<TableColumn fx:id="colDueDate" prefWidth="114.0" text="Due Date" />
 								<TableColumn fx:id="colPayment" prefWidth="102.0" text="Payment" />
 								<TableColumn fx:id="colAdditionalPayment" prefWidth="143.0" text="Additonal Payment" />
 								<TableColumn fx:id="colInterestPayment" prefWidth="111.0" text="Interest" />
 								<TableColumn fx:id="colPrinciple" prefWidth="146.0" text="Principle" />
-								<TableColumn fx:id="colEndingBalance" prefWidth="122.0" text="Balance" />
+								<TableColumn fx:id="colEndingBanlance" prefWidth="122.0" text="Balance" />
 							</columns>
 						</TableView>
 					</children>

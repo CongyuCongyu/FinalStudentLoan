@@ -10,7 +10,8 @@ public class Payment {
     private double InterestPayment;
     private double Principle;
     private double EndingBanlance;
- 
+
+   
     
 //One constructor     
 	public Payment(double beginningBalance, 

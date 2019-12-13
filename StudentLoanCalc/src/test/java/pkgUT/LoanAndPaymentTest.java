@@ -10,7 +10,7 @@ import pkgLogic.Loan;
 import pkgLogic.Payment;
 
 class LoanAndPaymentTest {
-	
+
 //pay extra 100
 	@Test
 	void Test1() {
@@ -69,7 +69,8 @@ class LoanAndPaymentTest {
            assertEquals(p.getPaymentNbr(),360 );
            assertEquals(p.getDueDate(),ld );
            assertEquals(p.getPrinciple(),435.49,0.1);
-
    	}
 
+    
+    
 }

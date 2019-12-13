@@ -48,9 +48,8 @@ public class LoanCalcViewController implements Initializable   {
 	private TableView<Payment> tvResults;
 	
 	
-	
 	@FXML
-	private TableColumn<Payment, Integer> colPaymentNbr;
+	private TableColumn<Payment, Integer> colPaymentNumber;
 
 	@FXML
 	private TableColumn<Payment, LocalDate> colDueDate;
@@ -68,22 +67,20 @@ public class LoanCalcViewController implements Initializable   {
 	private TableColumn<Payment, Double> colPrinciple;
 	
 	@FXML
-	private TableColumn<Payment, Double> colEndingBalance;
+	private TableColumn<Payment, Double> colEndingBanlance;
 	
 	
 	private ObservableList<Payment> paymentList = FXCollections.observableArrayList();
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		colPaymentNbr.setCellValueFactory(new PropertyValueFactory<>("PaymentNbr"));
+		colPaymentNumber.setCellValueFactory(new PropertyValueFactory<>("PaymentNbr"));
 		colDueDate.setCellValueFactory(new PropertyValueFactory<>("DueDate"));
 		colPayment.setCellValueFactory(new PropertyValueFactory<>("Payment"));
 		colAdditionalPayment.setCellValueFactory(new PropertyValueFactory<>("AdditionalPayment"));
 		colInterestPayment.setCellValueFactory(new PropertyValueFactory<>("InterestPayment"));
 		colPrinciple.setCellValueFactory(new PropertyValueFactory<>("Principle"));
-		colEndingBalance.setCellValueFactory(new PropertyValueFactory<>("EndingBalance"));
-
-		//TODO: Add a 'setCellValueFactor' entry for each column, mapping to each attribute in Payment
+		colEndingBanlance.setCellValueFactory(new PropertyValueFactory<>("EndingBanlance"));
 		
 		tvResults.setItems(paymentList);
 	}
